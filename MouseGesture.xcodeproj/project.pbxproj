@@ -1,0 +1,341 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		75975C21147D20C0001D3B77 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 75975C18147D20C0001D3B77 /* AppDelegate.m */; };
+		75975C22147D20C0001D3B77 /* CanvasView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75975C1A147D20C0001D3B77 /* CanvasView.m */; };
+		75975C23147D20C0001D3B77 /* CanvasWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 75975C1C147D20C0001D3B77 /* CanvasWindow.m */; };
+		75975C24147D20C0001D3B77 /* CanvasWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75975C1E147D20C0001D3B77 /* CanvasWindowController.m */; };
+		75975C25147D20C0001D3B77 /* MenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75975C20147D20C0001D3B77 /* MenuController.m */; };
+		75975C2E147D24C5001D3B77 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75975C2D147D24C5001D3B77 /* MainMenu.xib */; };
+		75975C33147D250A001D3B77 /* disable.png in Resources */ = {isa = PBXBuildFile; fileRef = 75975C2F147D250A001D3B77 /* disable.png */; };
+		75975C34147D250A001D3B77 /* enable.png in Resources */ = {isa = PBXBuildFile; fileRef = 75975C30147D250A001D3B77 /* enable.png */; };
+		75975C35147D250A001D3B77 /* highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 75975C31147D250A001D3B77 /* highlight.png */; };
+		75975C36147D250A001D3B77 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 75975C32147D250A001D3B77 /* Localizable.strings */; };
+		75975C38147D3CDE001D3B77 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 75975C37147D3CDE001D3B77 /* README.txt */; };
+		75E082DE1476BC7C00A459E5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E082DD1476BC7C00A459E5 /* Cocoa.framework */; };
+		75E082E81476BC7C00A459E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 75E082E61476BC7C00A459E5 /* InfoPlist.strings */; };
+		75E082EA1476BC7C00A459E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E082E91476BC7C00A459E5 /* main.m */; };
+		75E082EE1476BC7C00A459E5 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 75E082EC1476BC7C00A459E5 /* Credits.rtf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		75975C17147D20C0001D3B77 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../../mouse/mouse/AppDelegate.h; sourceTree = "<group>"; };
+		75975C18147D20C0001D3B77 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../../mouse/mouse/AppDelegate.m; sourceTree = "<group>"; };
+		75975C19147D20C0001D3B77 /* CanvasView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CanvasView.h; path = ../../mouse/mouse/CanvasView.h; sourceTree = "<group>"; };
+		75975C1A147D20C0001D3B77 /* CanvasView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CanvasView.m; path = ../../mouse/mouse/CanvasView.m; sourceTree = "<group>"; };
+		75975C1B147D20C0001D3B77 /* CanvasWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CanvasWindow.h; path = ../../mouse/mouse/CanvasWindow.h; sourceTree = "<group>"; };
+		75975C1C147D20C0001D3B77 /* CanvasWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CanvasWindow.m; path = ../../mouse/mouse/CanvasWindow.m; sourceTree = "<group>"; };
+		75975C1D147D20C0001D3B77 /* CanvasWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CanvasWindowController.h; path = ../../mouse/mouse/CanvasWindowController.h; sourceTree = "<group>"; };
+		75975C1E147D20C0001D3B77 /* CanvasWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CanvasWindowController.m; path = ../../mouse/mouse/CanvasWindowController.m; sourceTree = "<group>"; };
+		75975C1F147D20C0001D3B77 /* MenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuController.h; path = ../../mouse/mouse/MenuController.h; sourceTree = "<group>"; };
+		75975C20147D20C0001D3B77 /* MenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuController.m; path = ../../mouse/mouse/MenuController.m; sourceTree = "<group>"; };
+		75975C2D147D24C5001D3B77 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		75975C2F147D250A001D3B77 /* disable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = disable.png; sourceTree = "<group>"; };
+		75975C30147D250A001D3B77 /* enable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enable.png; sourceTree = "<group>"; };
+		75975C31147D250A001D3B77 /* highlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = highlight.png; sourceTree = "<group>"; };
+		75975C32147D250A001D3B77 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		75975C37147D3CDE001D3B77 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		75E082D91476BC7C00A459E5 /* MouseGesture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MouseGesture.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		75E082DD1476BC7C00A459E5 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		75E082E01476BC7C00A459E5 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		75E082E11476BC7C00A459E5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		75E082E21476BC7C00A459E5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		75E082E51476BC7C00A459E5 /* MouseGesture-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MouseGesture-Info.plist"; sourceTree = "<group>"; };
+		75E082E71476BC7C00A459E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		75E082E91476BC7C00A459E5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		75E082EB1476BC7C00A459E5 /* MouseGesture-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MouseGesture-Prefix.pch"; sourceTree = "<group>"; };
+		75E082ED1476BC7C00A459E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		75E082D61476BC7C00A459E5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75E082DE1476BC7C00A459E5 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		75975C2B147D249E001D3B77 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				75975C2D147D24C5001D3B77 /* MainMenu.xib */,
+				75975C2F147D250A001D3B77 /* disable.png */,
+				75975C30147D250A001D3B77 /* enable.png */,
+				75975C31147D250A001D3B77 /* highlight.png */,
+				75975C32147D250A001D3B77 /* Localizable.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		75E082CE1476BC7C00A459E5 = {
+			isa = PBXGroup;
+			children = (
+				75975C37147D3CDE001D3B77 /* README.txt */,
+				75E082E31476BC7C00A459E5 /* MouseGesture */,
+				75E082DC1476BC7C00A459E5 /* Frameworks */,
+				75E082DA1476BC7C00A459E5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		75E082DA1476BC7C00A459E5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				75E082D91476BC7C00A459E5 /* MouseGesture.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		75E082DC1476BC7C00A459E5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				75E082DD1476BC7C00A459E5 /* Cocoa.framework */,
+				75E082DF1476BC7C00A459E5 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		75E082DF1476BC7C00A459E5 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				75E082E01476BC7C00A459E5 /* AppKit.framework */,
+				75E082E11476BC7C00A459E5 /* CoreData.framework */,
+				75E082E21476BC7C00A459E5 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		75E082E31476BC7C00A459E5 /* MouseGesture */ = {
+			isa = PBXGroup;
+			children = (
+				75975C17147D20C0001D3B77 /* AppDelegate.h */,
+				75975C18147D20C0001D3B77 /* AppDelegate.m */,
+				75975C19147D20C0001D3B77 /* CanvasView.h */,
+				75975C1A147D20C0001D3B77 /* CanvasView.m */,
+				75975C1B147D20C0001D3B77 /* CanvasWindow.h */,
+				75975C1C147D20C0001D3B77 /* CanvasWindow.m */,
+				75975C1D147D20C0001D3B77 /* CanvasWindowController.h */,
+				75975C1E147D20C0001D3B77 /* CanvasWindowController.m */,
+				75975C1F147D20C0001D3B77 /* MenuController.h */,
+				75975C20147D20C0001D3B77 /* MenuController.m */,
+				75975C2B147D249E001D3B77 /* Resources */,
+				75E082E41476BC7C00A459E5 /* Supporting Files */,
+			);
+			path = MouseGesture;
+			sourceTree = "<group>";
+		};
+		75E082E41476BC7C00A459E5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				75E082E51476BC7C00A459E5 /* MouseGesture-Info.plist */,
+				75E082E61476BC7C00A459E5 /* InfoPlist.strings */,
+				75E082E91476BC7C00A459E5 /* main.m */,
+				75E082EB1476BC7C00A459E5 /* MouseGesture-Prefix.pch */,
+				75E082EC1476BC7C00A459E5 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		75E082D81476BC7C00A459E5 /* MouseGesture */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 75E082F71476BC7C00A459E5 /* Build configuration list for PBXNativeTarget "MouseGesture" */;
+			buildPhases = (
+				75E082D51476BC7C00A459E5 /* Sources */,
+				75E082D61476BC7C00A459E5 /* Frameworks */,
+				75E082D71476BC7C00A459E5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MouseGesture;
+			productName = MouseGesture;
+			productReference = 75E082D91476BC7C00A459E5 /* MouseGesture.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		75E082D01476BC7C00A459E5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = keakon.net;
+			};
+			buildConfigurationList = 75E082D31476BC7C00A459E5 /* Build configuration list for PBXProject "MouseGesture" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 75E082CE1476BC7C00A459E5;
+			productRefGroup = 75E082DA1476BC7C00A459E5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				75E082D81476BC7C00A459E5 /* MouseGesture */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		75E082D71476BC7C00A459E5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75E082E81476BC7C00A459E5 /* InfoPlist.strings in Resources */,
+				75E082EE1476BC7C00A459E5 /* Credits.rtf in Resources */,
+				75975C2E147D24C5001D3B77 /* MainMenu.xib in Resources */,
+				75975C33147D250A001D3B77 /* disable.png in Resources */,
+				75975C34147D250A001D3B77 /* enable.png in Resources */,
+				75975C35147D250A001D3B77 /* highlight.png in Resources */,
+				75975C36147D250A001D3B77 /* Localizable.strings in Resources */,
+				75975C38147D3CDE001D3B77 /* README.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		75E082D51476BC7C00A459E5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75E082EA1476BC7C00A459E5 /* main.m in Sources */,
+				75975C21147D20C0001D3B77 /* AppDelegate.m in Sources */,
+				75975C22147D20C0001D3B77 /* CanvasView.m in Sources */,
+				75975C23147D20C0001D3B77 /* CanvasWindow.m in Sources */,
+				75975C24147D20C0001D3B77 /* CanvasWindowController.m in Sources */,
+				75975C25147D20C0001D3B77 /* MenuController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		75E082E61476BC7C00A459E5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				75E082E71476BC7C00A459E5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		75E082EC1476BC7C00A459E5 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				75E082ED1476BC7C00A459E5 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		75E082F51476BC7C00A459E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		75E082F61476BC7C00A459E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		75E082F81476BC7C00A459E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MouseGesture/MouseGesture-Prefix.pch";
+				INFOPLIST_FILE = "MouseGesture/MouseGesture-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		75E082F91476BC7C00A459E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MouseGesture/MouseGesture-Prefix.pch";
+				INFOPLIST_FILE = "MouseGesture/MouseGesture-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		75E082D31476BC7C00A459E5 /* Build configuration list for PBXProject "MouseGesture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75E082F51476BC7C00A459E5 /* Debug */,
+				75E082F61476BC7C00A459E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		75E082F71476BC7C00A459E5 /* Build configuration list for PBXNativeTarget "MouseGesture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75E082F81476BC7C00A459E5 /* Debug */,
+				75E082F91476BC7C00A459E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 75E082D01476BC7C00A459E5 /* Project object */;
+}
