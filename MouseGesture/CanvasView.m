@@ -1,6 +1,6 @@
 //
 //  CanvasView.m
-//  mouse
+//  MouseGesture
 //
 //  Created by keakon on 11-11-14.
 //  Copyright (c) 2011年 keakon.net. All rights reserved.
@@ -20,10 +20,6 @@
 	}
 	
 	return self;
-}
-
-- (BOOL)acceptsFirstResponder {
-    return YES;
 }
 
 - (void)drawRect:(NSRect)dirtyRect
@@ -67,7 +63,6 @@
 
 - (void)setEnable:(BOOL)shouldEnable {
 	if (!shouldEnable) {
-//		NSLog(@"%d", [image retainCount]);
 		[image release];
 		image = nil;
 	} else if (image == nil) {

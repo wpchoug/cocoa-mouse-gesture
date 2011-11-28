@@ -1,6 +1,6 @@
 //
 //  CanvasView.m
-//  mouse
+//  MouseGesture
 //
 //  Created by keakon on 11-11-14.
 //  Copyright (c) 2011年 keakon.net. All rights reserved.

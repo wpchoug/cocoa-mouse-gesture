@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		75975C21147D20C0001D3B77 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 75975C18147D20C0001D3B77 /* AppDelegate.m */; };
-		75975C22147D20C0001D3B77 /* CanvasView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75975C1A147D20C0001D3B77 /* CanvasView.m */; };
-		75975C23147D20C0001D3B77 /* CanvasWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 75975C1C147D20C0001D3B77 /* CanvasWindow.m */; };
-		75975C24147D20C0001D3B77 /* CanvasWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75975C1E147D20C0001D3B77 /* CanvasWindowController.m */; };
-		75975C25147D20C0001D3B77 /* MenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75975C20147D20C0001D3B77 /* MenuController.m */; };
+		75019787148395DF00C7B661 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7501977D148395DF00C7B661 /* AppDelegate.m */; };
+		75019788148395DF00C7B661 /* MenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7501977E148395DF00C7B661 /* MenuController.m */; };
+		75019789148395DF00C7B661 /* CanvasView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75019782148395DF00C7B661 /* CanvasView.m */; };
+		7501978A148395DF00C7B661 /* CanvasWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75019784148395DF00C7B661 /* CanvasWindowController.m */; };
+		7501978B148395DF00C7B661 /* CanvasWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 75019785148395DF00C7B661 /* CanvasWindow.m */; };
 		75975C2E147D24C5001D3B77 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75975C2D147D24C5001D3B77 /* MainMenu.xib */; };
 		75975C33147D250A001D3B77 /* disable.png in Resources */ = {isa = PBXBuildFile; fileRef = 75975C2F147D250A001D3B77 /* disable.png */; };
 		75975C34147D250A001D3B77 /* enable.png in Resources */ = {isa = PBXBuildFile; fileRef = 75975C30147D250A001D3B77 /* enable.png */; };
@@ -25,16 +25,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		75975C17147D20C0001D3B77 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../../mouse/mouse/AppDelegate.h; sourceTree = "<group>"; };
-		75975C18147D20C0001D3B77 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../../mouse/mouse/AppDelegate.m; sourceTree = "<group>"; };
-		75975C19147D20C0001D3B77 /* CanvasView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CanvasView.h; path = ../../mouse/mouse/CanvasView.h; sourceTree = "<group>"; };
-		75975C1A147D20C0001D3B77 /* CanvasView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CanvasView.m; path = ../../mouse/mouse/CanvasView.m; sourceTree = "<group>"; };
-		75975C1B147D20C0001D3B77 /* CanvasWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CanvasWindow.h; path = ../../mouse/mouse/CanvasWindow.h; sourceTree = "<group>"; };
-		75975C1C147D20C0001D3B77 /* CanvasWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CanvasWindow.m; path = ../../mouse/mouse/CanvasWindow.m; sourceTree = "<group>"; };
-		75975C1D147D20C0001D3B77 /* CanvasWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CanvasWindowController.h; path = ../../mouse/mouse/CanvasWindowController.h; sourceTree = "<group>"; };
-		75975C1E147D20C0001D3B77 /* CanvasWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CanvasWindowController.m; path = ../../mouse/mouse/CanvasWindowController.m; sourceTree = "<group>"; };
-		75975C1F147D20C0001D3B77 /* MenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuController.h; path = ../../mouse/mouse/MenuController.h; sourceTree = "<group>"; };
-		75975C20147D20C0001D3B77 /* MenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuController.m; path = ../../mouse/mouse/MenuController.m; sourceTree = "<group>"; };
+		7501977D148395DF00C7B661 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7501977E148395DF00C7B661 /* MenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuController.m; sourceTree = "<group>"; };
+		7501977F148395DF00C7B661 /* MenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuController.h; sourceTree = "<group>"; };
+		75019780148395DF00C7B661 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		75019781148395DF00C7B661 /* CanvasView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasView.h; sourceTree = "<group>"; };
+		75019782148395DF00C7B661 /* CanvasView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasView.m; sourceTree = "<group>"; };
+		75019783148395DF00C7B661 /* CanvasWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasWindowController.h; sourceTree = "<group>"; };
+		75019784148395DF00C7B661 /* CanvasWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasWindowController.m; sourceTree = "<group>"; };
+		75019785148395DF00C7B661 /* CanvasWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasWindow.m; sourceTree = "<group>"; };
+		75019786148395DF00C7B661 /* CanvasWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasWindow.h; sourceTree = "<group>"; };
 		75975C2D147D24C5001D3B77 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		75975C2F147D250A001D3B77 /* disable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = disable.png; sourceTree = "<group>"; };
 		75975C30147D250A001D3B77 /* enable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enable.png; sourceTree = "<group>"; };
@@ -117,16 +117,16 @@
 		75E082E31476BC7C00A459E5 /* MouseGesture */ = {
 			isa = PBXGroup;
 			children = (
-				75975C17147D20C0001D3B77 /* AppDelegate.h */,
-				75975C18147D20C0001D3B77 /* AppDelegate.m */,
-				75975C19147D20C0001D3B77 /* CanvasView.h */,
-				75975C1A147D20C0001D3B77 /* CanvasView.m */,
-				75975C1B147D20C0001D3B77 /* CanvasWindow.h */,
-				75975C1C147D20C0001D3B77 /* CanvasWindow.m */,
-				75975C1D147D20C0001D3B77 /* CanvasWindowController.h */,
-				75975C1E147D20C0001D3B77 /* CanvasWindowController.m */,
-				75975C1F147D20C0001D3B77 /* MenuController.h */,
-				75975C20147D20C0001D3B77 /* MenuController.m */,
+				75019780148395DF00C7B661 /* AppDelegate.h */,
+				7501977D148395DF00C7B661 /* AppDelegate.m */,
+				7501977F148395DF00C7B661 /* MenuController.h */,
+				7501977E148395DF00C7B661 /* MenuController.m */,
+				75019781148395DF00C7B661 /* CanvasView.h */,
+				75019782148395DF00C7B661 /* CanvasView.m */,
+				75019783148395DF00C7B661 /* CanvasWindowController.h */,
+				75019784148395DF00C7B661 /* CanvasWindowController.m */,
+				75019786148395DF00C7B661 /* CanvasWindow.h */,
+				75019785148395DF00C7B661 /* CanvasWindow.m */,
 				75975C2B147D249E001D3B77 /* Resources */,
 				75E082E41476BC7C00A459E5 /* Supporting Files */,
 			);
@@ -215,11 +215,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				75E082EA1476BC7C00A459E5 /* main.m in Sources */,
-				75975C21147D20C0001D3B77 /* AppDelegate.m in Sources */,
-				75975C22147D20C0001D3B77 /* CanvasView.m in Sources */,
-				75975C23147D20C0001D3B77 /* CanvasWindow.m in Sources */,
-				75975C24147D20C0001D3B77 /* CanvasWindowController.m in Sources */,
-				75975C25147D20C0001D3B77 /* MenuController.m in Sources */,
+				75019787148395DF00C7B661 /* AppDelegate.m in Sources */,
+				75019788148395DF00C7B661 /* MenuController.m in Sources */,
+				75019789148395DF00C7B661 /* CanvasView.m in Sources */,
+				7501978A148395DF00C7B661 /* CanvasWindowController.m in Sources */,
+				7501978B148395DF00C7B661 /* CanvasWindow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

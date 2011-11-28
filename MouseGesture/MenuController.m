@@ -1,6 +1,6 @@
 //
 //  MenuController.m
-//  mouse
+//  MouseGesture
 //
 //  Created by keakon on 11-11-18.
 //  Copyright (c) 2011年 keakon.net. All rights reserved.
@@ -12,34 +12,35 @@
 @implementation MenuController
 
 @synthesize statusMenu;
+
 static LSSharedFileListItemRef itemRefInLoginItems() {
-    LSSharedFileListRef loginItemsRef = LSSharedFileListCreate(NULL, kLSSharedFileListSessionLoginItems, NULL);
-    if (loginItemsRef == NULL) {
+	LSSharedFileListRef loginItemsRef = LSSharedFileListCreate(NULL, kLSSharedFileListSessionLoginItems, NULL);
+	if (loginItemsRef == NULL) {
 		return NULL;
 	}
 	
-    LSSharedFileListItemRef itemRef = NULL;
+	LSSharedFileListItemRef itemRef = NULL;
 	CFURLRef itemUrlRef = NULL;
-    NSURL *appUrl = [NSURL fileURLWithPath:NSBundle.mainBundle.bundlePath];
-    CFArrayRef loginItems = LSSharedFileListCopySnapshot(loginItemsRef, NULL);
+	NSURL *appUrl = [NSURL fileURLWithPath:NSBundle.mainBundle.bundlePath];
+	CFArrayRef loginItems = LSSharedFileListCopySnapshot(loginItemsRef, NULL);
 	CFIndex length = CFArrayGetCount(loginItems);
 	for (CFIndex i = 0; i < length; ++i) {
 		LSSharedFileListItemRef currentItemRef = (LSSharedFileListItemRef)CFArrayGetValueAtIndex(loginItems, i);
-        if (LSSharedFileListItemResolve(currentItemRef, 0, &itemUrlRef, NULL) == noErr) {
-            if ([(NSURL *)itemUrlRef isEqual:appUrl]) {
+		if (LSSharedFileListItemResolve(currentItemRef, 0, &itemUrlRef, NULL) == noErr) {
+			if ([(NSURL *)itemUrlRef isEqual:appUrl]) {
 				CFRelease(itemUrlRef);
-                itemRef = currentItemRef;
+				itemRef = currentItemRef;
 				CFRetain(itemRef);
 				break;
-            }
+			}
 			CFRelease(itemUrlRef);
-        }
+		}
 	}
 	
 	CFRelease(loginItems);
-    CFRelease(loginItemsRef);
+	CFRelease(loginItemsRef);
 	
-    return itemRef;
+	return itemRef;
 }
 
 - (void)awakeFromNib {
@@ -84,24 +85,24 @@ static LSSharedFileListItemRef itemRefInLoginItems() {
 }
 
 - (IBAction)toggleLaunchAtStartup:(id)sender {
-    LSSharedFileListRef loginItemsRef = LSSharedFileListCreate(NULL, kLSSharedFileListSessionLoginItems, NULL);
-    if (loginItemsRef == NULL) {
+	LSSharedFileListRef loginItemsRef = LSSharedFileListCreate(NULL, kLSSharedFileListSessionLoginItems, NULL);
+	if (loginItemsRef == NULL) {
 		return;
 	}
 	
 	isLaunchAtStartup = !isLaunchAtStartup;
-    if (isLaunchAtStartup) {
-        CFURLRef appUrl = (CFURLRef)[NSURL fileURLWithPath:NSBundle.mainBundle.bundlePath];
-        LSSharedFileListItemRef itemRef = LSSharedFileListInsertItemURL(loginItemsRef, kLSSharedFileListItemLast, NULL, NULL, appUrl, NULL, NULL);
-        CFRelease(itemRef);
-    } else {
-        LSSharedFileListItemRef itemRef = itemRefInLoginItems();
-        if (itemRef != NULL) {
+	if (isLaunchAtStartup) {
+		CFURLRef appUrl = (CFURLRef)[NSURL fileURLWithPath:NSBundle.mainBundle.bundlePath];
+		LSSharedFileListItemRef itemRef = LSSharedFileListInsertItemURL(loginItemsRef, kLSSharedFileListItemLast, NULL, NULL, appUrl, NULL, NULL);
+		CFRelease(itemRef);
+	} else {
+		LSSharedFileListItemRef itemRef = itemRefInLoginItems();
+		if (itemRef != NULL) {
 			LSSharedFileListItemRemove(loginItemsRef, itemRef);
 			CFRelease(itemRef);
 		}
-    }
-    CFRelease(loginItemsRef);
+	}
+	CFRelease(loginItemsRef);
 	toggleLaunchAtStartupItem.state = isLaunchAtStartup ? NSOnState : NSOffState;
 }
 

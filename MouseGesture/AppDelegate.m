@@ -1,6 +1,6 @@
 //
 //  AppDelegate.m
-//  mouse
+//  MouseGesture
 //
 //  Created by keakon on 11-11-9.
 //  Copyright (c) 2011年 keakon.net. All rights reserved.
@@ -44,8 +44,7 @@ static UnicodeStruct username;
 static UnicodeStruct password;
 static UnicodeStruct email;
 
-extern pid_t getFrontProcessPID(); // should also declare as extern function in C99
-inline pid_t getFrontProcessPID() {
+static inline pid_t getFrontProcessPID() {
 	ProcessSerialNumber psn;
 	pid_t pid;
 	if (GetFrontProcess(&psn) == noErr && GetProcessPID(&psn, &pid) == noErr) {
@@ -54,8 +53,7 @@ inline pid_t getFrontProcessPID() {
 	return -1;
 }
 
-extern NSString *getFrontProcessName();
-inline NSString *getFrontProcessName() {
+static inline NSString *getFrontProcessName() {
 	ProcessSerialNumber psn;
 	CFStringRef nameRef;
 	if (GetFrontProcess(&psn) == noErr && CopyProcessName(&psn, &nameRef) == noErr) {
@@ -66,8 +64,7 @@ inline NSString *getFrontProcessName() {
 	return nil;
 }
 
-extern void pressButtonInMainWindowOfProcess(pid_t pid, CFStringRef buttonName);
-inline void pressButtonInMainWindowOfProcess(pid_t pid, CFStringRef buttonName) {
+static inline void pressButtonInMainWindowOfProcess(pid_t pid, CFStringRef buttonName) {
 	if (AXAPIEnabled()) {
 		AXUIElementRef app = AXUIElementCreateApplication(pid);
 		AXUIElementRef mainWindow = NULL;
@@ -95,8 +92,7 @@ static NSRunningApplication *getActiveApplication() {
 }
 */
 
-extern TABBED_APPLICATION isWhichTabbedApplication();
-inline TABBED_APPLICATION isWhichTabbedApplication() {
+static inline TABBED_APPLICATION isWhichTabbedApplication() {
 	NSString *name = getFrontProcessName();
 	if (name) {
 		if ([name hasPrefix:@"Google Chrome"]) {
@@ -110,8 +106,7 @@ inline TABBED_APPLICATION isWhichTabbedApplication() {
 	return NOT_TABBED_APPLICATION;
 }
 
-extern void pressKey(CGKeyCode virtualKey);
-inline void pressKey(CGKeyCode virtualKey) {
+static inline void pressKey(CGKeyCode virtualKey) {
 	CGEventRef event = CGEventCreateKeyboardEvent(NULL, virtualKey, true);
 	CGEventPost(kCGSessionEventTap, event);
 	CFRelease(event);
@@ -121,8 +116,7 @@ inline void pressKey(CGKeyCode virtualKey) {
 	CFRelease(event);
 }
 
-extern void pressKeyWithFlags(CGKeyCode virtualKey, CGEventFlags flags);
-inline void pressKeyWithFlags(CGKeyCode virtualKey, CGEventFlags flags) {
+static inline void pressKeyWithFlags(CGKeyCode virtualKey, CGEventFlags flags) {
 	CGEventRef event = CGEventCreateKeyboardEvent(NULL, virtualKey, true);
 	CGEventSetFlags(event, flags);
 	CGEventPost(kCGSessionEventTap, event);
@@ -134,15 +128,13 @@ inline void pressKeyWithFlags(CGKeyCode virtualKey, CGEventFlags flags) {
 	CFRelease(event);
 }
 
-extern void copyUnicodeString(NSString *string, UnicodeStruct *unicodeStruct);
-inline void copyUnicodeString(NSString *string, UnicodeStruct *unicodeStruct) { // should release unicodeStruct->string
+static inline void copyUnicodeString(NSString *string, UnicodeStruct *unicodeStruct) { // should release unicodeStruct->string
 	unicodeStruct->length = string.length;
 	unicodeStruct->string = (UniChar *)malloc(sizeof(UniChar) * unicodeStruct->length);
 	[string getCharacters:unicodeStruct->string range:NSMakeRange(0, unicodeStruct->length)];
 }
 
-extern void typeSting(UnicodeStruct *unicodeStruct);
-inline void typeSting(UnicodeStruct *unicodeStruct) {
+static inline void typeSting(UnicodeStruct *unicodeStruct) {
 	CGEventRef event = CGEventCreateKeyboardEvent(NULL, 0, true);
 	CGEventKeyboardSetUnicodeString(event, unicodeStruct->length, unicodeStruct->string);
 	CGEventPost(kCGSessionEventTap, event);
@@ -155,8 +147,7 @@ inline void typeSting(UnicodeStruct *unicodeStruct) {
 }
 
 /*
-extern void typeSting(NSString *string);
-inline void typeSting(NSString *string) {
+static inline void typeSting(NSString *string) {
 	UniCharCount stringLength = string.length;
 	UniChar *unicodeString = (UniChar *)malloc(sizeof(UniChar) * stringLength);
 	[string getCharacters:unicodeString range:NSMakeRange(0, stringLength)];
@@ -240,6 +231,13 @@ static bool handleGesture() {
 						// should check process name, some process may not use this hotkey
 						pressKeyWithFlags(kVK_ANSI_F, kCGEventFlagMaskControl | kCGEventFlagMaskCommand);
 						return true;
+						/* don't work in some process and can't exit full screen mode
+						pid_t pid = getFrontProcessPID();
+						if (pid > 0) {
+							pressButtonInMainWindowOfProcess(pid, kAXFullScreenButtonAttribute);
+							return true;
+						}
+						*/
 					}
 					break;
 				case DOWN:
@@ -329,7 +327,7 @@ static bool handleGesture() {
 			}
 			break;
 		case 3:
-			if (directions[0] == DOWN && directions[1] == LEFT && directions[2] == UP) {
+			if (directions[0] == DOWN && directions[1] == LEFT && directions[2] == UP) { // print email
 				typeSting(&email);
 				return true;
 			}
@@ -442,6 +440,8 @@ static CGEventRef mouseEventCallback(CGEventTapProxy proxy, CGEventType type, CG
 	CFRelease(mouseEventTap);
 	CFRelease(runLoopSource);
 	isEnable = true;
+	
+	getFrontProcessPID();
 }
 
 @end
