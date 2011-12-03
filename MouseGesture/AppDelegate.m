@@ -388,10 +388,17 @@ static CGEventRef mouseEventCallback(CGEventTapProxy proxy, CGEventType type, CG
 		case kCGEventTapDisabledByUserInput: // will be useful if using CGEventTap to disable
 			directionLength = 0;
 			if (mouseDownEvent) {
+				CGPoint location = CGEventGetLocation(mouseDownEvent);
+				CGEventPost(kCGSessionEventTap, mouseDownEvent);
 				CFRelease(mouseDownEvent);
-			}
-			if (mouseDraggedEvent) {
-				CFRelease(mouseDraggedEvent);
+				if (mouseDraggedEvent) {
+					location = CGEventGetLocation(mouseDraggedEvent);
+					CGEventPost(kCGSessionEventTap, mouseDraggedEvent);
+					CFRelease(mouseDraggedEvent);
+				}
+				CGEventRef event = CGEventCreateMouseEvent(NULL, kCGEventRightMouseUp, location, kCGMouseButtonRight);
+				CGEventPost(kCGSessionEventTap, event);
+				CFRelease(event);
 			}
 			mouseDownEvent = mouseDraggedEvent = NULL;
 			windowController.enable = isEnable;
