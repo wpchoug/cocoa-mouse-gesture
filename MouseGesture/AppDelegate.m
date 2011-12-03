@@ -343,51 +343,8 @@ static CGEventRef mouseEventCallback(CGEventTapProxy proxy, CGEventType type, CG
 	NSEvent *mouseEvent;
 	switch (type) {
 		case kCGEventRightMouseDown:
-			mouseEvent = [NSEvent eventWithCGEvent:event];
-			[windowController handleMouseEvent:mouseEvent];
-			mouseDownEvent = event;
-			CFRetain(mouseDownEvent);
-			lastLocation = mouseEvent.locationInWindow;
-			break;
-		case kCGEventRightMouseDragged:
-			mouseEvent = [NSEvent eventWithCGEvent:event];
-			[windowController handleMouseEvent:mouseEvent];
-			if (mouseDraggedEvent) {
-				CFRelease(mouseDraggedEvent);
-			}
-			mouseDraggedEvent = event;
-			CFRetain(mouseDraggedEvent);
-			updateDirections(mouseEvent);
-			break;
-		case kCGEventRightMouseUp: {
-			mouseEvent = [NSEvent eventWithCGEvent:event];
-			[windowController handleMouseEvent:mouseEvent];
-			updateDirections(mouseEvent);
-			if (!handleGesture()) {
-				if (mouseDownEvent) {
-					CGEventPost(kCGSessionEventTap, mouseDownEvent);
-					if (mouseDraggedEvent) {
-						CGEventPost(kCGSessionEventTap, mouseDraggedEvent);
-					}
-					CGEventPost(kCGSessionEventTap, event);
-				}
-			}
-			if (mouseDownEvent) {
-				CFRelease(mouseDownEvent);
-			}
-			if (mouseDraggedEvent) {
-				CFRelease(mouseDraggedEvent);
-			}
-			mouseDownEvent = mouseDraggedEvent = NULL;
-			directionLength = 0;
-			break;
-		}
-		case kCGEventTapDisabledByTimeout:
-			CGEventTapEnable(mouseEventTap, isEnable); // re-enable
-			// pass through
-		case kCGEventTapDisabledByUserInput: // will be useful if using CGEventTap to disable
-			directionLength = 0;
-			if (mouseDownEvent) {
+			if (mouseDownEvent) { // mouseDownEvent may not release when kCGEventTapDisabledByTimeout
+				directionLength = 0;
 				CGPoint location = CGEventGetLocation(mouseDownEvent);
 				CGEventPost(kCGSessionEventTap, mouseDownEvent);
 				CFRelease(mouseDownEvent);
@@ -399,8 +356,50 @@ static CGEventRef mouseEventCallback(CGEventTapProxy proxy, CGEventType type, CG
 				CGEventRef event = CGEventCreateMouseEvent(NULL, kCGEventRightMouseUp, location, kCGMouseButtonRight);
 				CGEventPost(kCGSessionEventTap, event);
 				CFRelease(event);
+				mouseDownEvent = mouseDraggedEvent = NULL;
+			}
+			
+			mouseEvent = [NSEvent eventWithCGEvent:event];
+			[windowController handleMouseEvent:mouseEvent];
+			mouseDownEvent = event;
+			CFRetain(mouseDownEvent);
+			lastLocation = mouseEvent.locationInWindow;
+			break;
+		case kCGEventRightMouseDragged:
+			if (mouseDownEvent) {
+				mouseEvent = [NSEvent eventWithCGEvent:event];
+				[windowController handleMouseEvent:mouseEvent];
+				if (mouseDraggedEvent) {
+					CFRelease(mouseDraggedEvent);
+				}
+				mouseDraggedEvent = event;
+				CFRetain(mouseDraggedEvent);
+				updateDirections(mouseEvent);
+			}
+			break;
+		case kCGEventRightMouseUp: {
+			if (mouseDownEvent) {
+				mouseEvent = [NSEvent eventWithCGEvent:event];
+				[windowController handleMouseEvent:mouseEvent];
+				updateDirections(mouseEvent);
+				if (!handleGesture()) {
+					CGEventPost(kCGSessionEventTap, mouseDownEvent);
+					if (mouseDraggedEvent) {
+						CGEventPost(kCGSessionEventTap, mouseDraggedEvent);
+					}
+					CGEventPost(kCGSessionEventTap, event);
+				}
+				CFRelease(mouseDownEvent);
+			}
+			if (mouseDraggedEvent) {
+				CFRelease(mouseDraggedEvent);
 			}
 			mouseDownEvent = mouseDraggedEvent = NULL;
+			directionLength = 0;
+			break;
+		}
+		case kCGEventTapDisabledByTimeout:
+			CGEventTapEnable(mouseEventTap, isEnable); // re-enable
 			windowController.enable = isEnable;
 			break;
 		default:
