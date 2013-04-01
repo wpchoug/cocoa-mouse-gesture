@@ -77,15 +77,17 @@
 
 - (void)mouseDragged:(NSEvent *)event
 {
-	NSPoint newLocation = event.locationInWindow;
-	[self drawCircleAtPoint:newLocation];
-	[self drawLineFromPoint:lastLocation toPoint:newLocation];
-	[self setNeedsDisplayInRect:NSMakeRect(fmin(lastLocation.x - radius, newLocation.x - radius),
-											fmin(lastLocation.y - radius, newLocation.y - radius),
-											abs(newLocation.x - lastLocation.x) + radius * 2,
-											abs(newLocation.y - lastLocation.y) + radius * 2)];
-	
-	lastLocation = newLocation;
+	@autoreleasepool {
+		NSPoint newLocation = event.locationInWindow;
+		[self drawCircleAtPoint:newLocation];
+		[self drawLineFromPoint:lastLocation toPoint:newLocation];
+		[self setNeedsDisplayInRect:NSMakeRect(fmin(lastLocation.x - radius, newLocation.x - radius),
+											   fmin(lastLocation.y - radius, newLocation.y - radius),
+											   abs(newLocation.x - lastLocation.x) + radius * 2,
+											   abs(newLocation.y - lastLocation.y) + radius * 2)];
+		
+		lastLocation = newLocation;
+	}
 }
 
 - (void)mouseUp:(NSEvent *)event
